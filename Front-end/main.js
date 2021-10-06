@@ -24,7 +24,7 @@ fetch('http://localhost:3000/api/cameras/') //Afficher les objets sur la page we
         <img class="card-img-top"src='${product.imageUrl}' alt='' /> 
         <div class="card-body">
         <h2 class="card-title">${product.name}</h2>
-        <p class="card-text">${product.price}€</p>
+        <p class="card-text">${product.price}</p>
         </div>
         </a>
         </div>

@@ -50,8 +50,12 @@
                 <!--nav secondaire costumer-->
                 <ul class="navbar-nav flex-row flex-wrap ms-md-auto nav-costumer">
                     <li class="nav-item "><a class="nav-link" href="#"><i class="fas fa-user"></i></a></li>
-                    <li class="nav-item "><a class="nav-link" href="#"><i class="fas fa-cart-arrow-down"></i></a>
-                    <li class="nav-item "><a class="nav-link" href="confirmation.html">Commande</a></li>
+                    <li class="nav-item cart">
+                        <a class="nav-link " href="panier.html">
+                            <i class="fas fa-cart-arrow-down"></i><span>0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item "><a class="nav-link" href="confirmation.html">Commande</a>
                     </li>
                 </ul>
             </div>
@@ -69,6 +73,7 @@
     </section>
 
 </header>
+
 
 
 
@@ -91,21 +96,78 @@
     </section>
 
     <section>
-        <div class="container d-flex justify-content-center my-5">
-            <h3 class="fw-bold"> Votre panier<i class="fas fa-camera-retro"></i></h3>
-        </div>
+        <h4 class="text-center"> Votre panier</h4>
+
+        <div class="container my-5">
 
 
-        <article>
+            <div class=" row header-product d-flex justify-content-between">
+                <h5 class=" col productTittle">Référence</h5>
+                <h5 class=" col price">Prix</h5>
+                <h5 class="col option">Option de lentilles</h5>
+                <h5 class="col quantity">Quantité</h5>
+                <h5 class="col total">Total</h5>
 
-            <div class="container d-flex justify-content-center my-5 ">
-
-                <p>Votre panier est vide</p>
+                <div class="product"></div> <!-- Récupéreration des produits stockés dans le localStorage-->
 
             </div>
-        </article>
+        </div>
+        <div class="container my-5">
 
+            <h5 class="text-center">Remplissez le formulaire pour valider votre commande</h5>
 
+            <form class="row g-3 needs-validation" novalidate>
+                <div class="col ">
+                    <label for="validationTooltip01" class="form-label">Nom</label>
+                    <input type="text" class="form-control" id="validationTooltip01" value="" required>
+                    <div class="valid-tooltip">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col ">
+                    <label for="validationTooltip02" class="form-label">Prénom</label>
+                    <input type="text" class="form-control" id="validationTooltip02" value="" required>
+                    <div class="valid-tooltip">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col ">
+                    <label for="validationTooltipUsername" class="form-label">Email</label>
+                    <div class="input-group has-validation">
+                        <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                        <input type="text" class="form-control" id="validationTooltipUsername"
+                            aria-describedby="validationTooltipUsernamePrepend" required>
+                        <div class="invalid-tooltip">
+                            Please choose a unique and valid username.
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="validationTooltip03" class="form-label">Ville</label>
+                    <input type="text" class="form-control" id="validationTooltip03" required>
+                    <div class="invalid-tooltip">
+                        Ajouter votre ville.
+                    </div>
+                </div>
+                <div class="col ">
+                    <label for="validationTooltip04" class="form-label">Pays</label>
+                    <input type="text" class="form-control" id="validationTooltip02" value="" required>
+                    <div class="invalid-tooltip">
+                        Ajouter votre pays.
+                    </div>
+                </div>
+                <div class="col ">
+                    <label for="validationTooltip05" class="form-label">Code postale</label>
+                    <input type="text" class="form-control" id="validationTooltip05" required>
+                    <div class="invalid-tooltip">
+                        Ajouter votre code postale.
+                    </div>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary" type="submit">Commander</button>
+                </div>
+            </form>
+        </div>
     </section>
 </main>
 
@@ -207,8 +269,7 @@
 
 
 
-<script src="./main.js"></script>
-<script src="./product.js"></script>
+
 <script src="./panier.js"></script>
 <!-- Option 1: Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
