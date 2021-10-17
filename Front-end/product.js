@@ -4,7 +4,7 @@ const params = new URLSearchParams(window.location.search);
 const id = params.get('id');
 //console.log( window.location.search); Indique la position de la page en cours
 
-
+// Identification des élements du dom //
 const optionLenses = document.getElementById('optionLenses');
 let title = document.querySelector('.card-title');
 let description = document.querySelector('.card-text');
@@ -25,20 +25,24 @@ fetch(`http://localhost:3000/api/cameras/${id}`) //Passer le paramêtre dans l'u
     img.src = data.imageUrl;
 
 
-    for (let lense of data.lenses) {
+    for (let lense of data.lenses) {//---- Boucle pour l'itération des options de chaque produit----------
       optionLenses.innerHTML += `<option value="${lense}">${lense}</option>`;
     }
 
-    // -----------Construction de l'objet product avec les données de l'article---------------
+    // -----------Construction de l'objet product avec les données de l'article----------
+    //---------Récupération de la la séléction du client---------------
     let product = {
-      title: data.title,
+      title: data.name,
       price: data.price,
       lense: optionLenses.value,
     }
+    console.log(product);
+
+    //----- Ajouter au panier (nav)---------
 
     // Ajouter au panier
     addCart.addEventListener('click', () => {
-
+      // Création de l'élément avec le localStorage
       localStorage.setItem(data._id, JSON.stringify(product));
       document.querySelector('.cart span').textContent = localStorage.length;
 
