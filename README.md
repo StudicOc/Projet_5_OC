@@ -1,7 +1,7 @@
 # Projet_5_OC
 
 Réalisation de la partie front-end pour Orinoco, un
-entreprise de commerce électronique.
+entreprise souhaitant étaller ses serices sur le web et obtenir un site e-commerce.
 
 Buts:
 
