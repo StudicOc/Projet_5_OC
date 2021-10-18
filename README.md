@@ -1,17 +1,24 @@
 # Projet_5_OC
-Study project: 
 
-Realization of the front-end part for Orinoco, a
-e-commerce business.
+Réalisation de la partie front-end pour Orinoco, un
+entreprise de commerce électronique.
 
-Goals :
+Buts:
 
--Create a test plan for an application
+-Créer un plan de test pour une application
 
--Interact with a web service using JavaScript
+-Interagir avec un service Web en utilisant JavaScript
 
--Validate data from external sources
+-Valider les données de sources externes
 
--Manage JavaScript events
+-Gérer les événements JavaScript
+
+Le but de ce projet est de travailler avec une API contenant des données spécifiques.
+
+Nous utiliserons pour cela les méthodes GET et POST afin de récupérez des données du service web.
+
+Le site se compose de 4 pages Acceuil, produit séléctionné, panier et confirmation de commande. 
+
+
 
 
