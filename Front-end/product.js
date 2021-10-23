@@ -47,7 +47,10 @@ fetch(`http://localhost:3000/api/cameras/${id}`) //Passer le paramêtre dans l'u
       document.querySelector('.cart span').textContent = localStorage.length;
 
       alert("Ajouté au panier");
+
     })
+
+
 
   })
   .catch(error => console.log(error))

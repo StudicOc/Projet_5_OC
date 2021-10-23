@@ -65,7 +65,7 @@
     <!-- Header-Introduction-->
     <section class=" py-2 costum-bg">
         <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-white">
+            <div class="text-center text-white flotting">
                 <h1 class="display-4 fw-bold">Un style unique</h1>
                 <p class="lead fw-normal text-white-50 mb-0">Des caméras vintage et ses options uniques</p>
             </div>
@@ -94,88 +94,104 @@
 
 
     <section>
-        <p class="text-center my-4"> Bienvenue sur votre panier d'achat</p>
+
 
         <div class="container" id="container-products-card">
+            <h3 class="text-center my-4"> Bienvenue sur votre panier d'achat</h3>
 
-            <div class="row ">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-4">
+                    <table class="table table-danger">
 
-                <table class="table table-danger">
+                        <thead>
 
-                    <thead>
+                            <tr>
+                                <th class="col">Référence</th>
+                                <th class="col">Prix</th>
+                                <th class="col">Lentilles</th>
+                            </tr>
 
-                        <tr>
-                            <th class="col">Référence</th>
-                            <th class="col">Prix</th>
-                            <th class="col">Lentilles</th>
-                        </tr>
+                        </thead>
+                        <tbody class="productBody">
 
-                    </thead>
-                    <tbody class="productBody">
+                        </tbody>
 
-                    </tbody>
+                    </table>
+                    <table class="table table-danger text-center">
 
-                </table>
-                <table class="table table-danger">
+                        <thead>
 
-                    <thead>
+                            <tr>
+                                <th class="col">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="totalityPrice">€</th>
 
-                        <tr>
-                            <th class="col">Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th class="totalityPrice"></th>
+                            </tr>
+                        </tbody>
 
-                        </tr>
-                    </tbody>
-
-                </table>
+                    </table>
+                </div>
 
             </div>
-            <div class="row">
-                <div class="my-5 text-center">
-                    <p>Remplissez le formulaire pour valider votre
-                        commande</p>
+            <div class="row  d-flex justify-content-center">
+                <h4 class="text-center">Complétez le formulaire pour passer commande</h4>
+                <div class="col-lg-4">
+
+                    <form action="/" method="post" class="row gy-4" id="formContact">
+                        <!--ID identification-->
+                        <!--Demande d'information de l'utilisateur-->
+                        <div class="form-group">
+                            <label for="firstName">Prénom</label>
+                            <input type="text" class="form-control" placeholder="" name="firstName" id="firstName"
+                                value="">
+                            <span id="error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName" class="form-label">Nom</label>
+                            <input type="text" class="form-control" name="lastName" id="lastName" placeholder=""
+                                value="">
+                            <span id="error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" name="email" id="email"
+                                placeholder="mail@example.com" value="">
+                            <span id="error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="address" class="form-label">Adresse</label>
+                            <input type="text" class="form-control" name="address" id="address"
+                                placeholder="Rue, avenue" value="">
+                            <span id="error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="zip" class="form-label">Code postale</label>
+                            <input type="text" class="form-control" id="zip" name="zip" placeholder="">
+                            <span id="error" value=""></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="city" class="form-label">Ville</label>
+                            <input type="text" class="form-control" id="city" name="city" placeholder="" value="">
+                            <span id="error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="country" class="form-label">Pays</label>
+                            <input type="text" class="form-control" id="country" name="country" placeholder="" value="">
+                            <span id="error"></span>
+                        </div>
+
+
+                        <div class=" form-group my-4 text-center ">
+                            <button class="btn  btnSubmit fw-bold btn-secondary" type="submit">Commander</button>
+                        </div>
+
+                    </form>
                 </div>
-                <form class="row gy-4" id="formContact">
-
-                    <div class="col-md-4 col-lg-3">
-                        <label for="firstName" class="form-label">Prénom</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-                    </div>
-                    <div class="col-md-4 col-lg-3">
-                        <label for="lastName" class="form-label">Nom</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-                    </div>
-                    <div class="col-md-4 col-lg-3 ">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="mail@example.com">
-                    </div>
-                    <div class="col-md-5 col-lg-4 ">
-                        <label for="address" class="form-label">Adresse</label>
-                        <input type="text" class="form-control" id="address" placeholder="Rue, avenue" required>
-                    </div>
-
-                    <div class="col-md-4 col-lg-2 ">
-                        <label for="zip" class="form-label">Code postale</label>
-                        <input type="text" class="form-control" id="zip" placeholder="" required>
-                    </div>
-                    <div class="col-md-4 col-lg-2 ">
-                        <label for="city" class="form-label">Ville</label>
-                        <input type="text" class="form-control" id="city" placeholder="" required>
-                    </div>
-                    <div class=" col-md-4 col-lg-3 ">
-                        <label for="country" class="form-label">Pays</label>
-                        <input type="text" class="form-control" id="country" placeholder="" required>
-                    </div>
-
-                    <div class=" my-4 text-center ">
-                        <button class="btn  btnSubmit fw-bold  " type="submit">Commander</button>
-                    </div>
-
-                </form>
             </div>
         </div>
 
@@ -191,88 +207,53 @@
 </main>
 
 
-<footer>
-    <!--Naviagtion fluide- expéreince utilisateur-ancrage-->
-    <div class="container text-center py-3">
-        <a href="#header" aria-label="Retour en haut">
-            <span>Retour en haut</span>
+<footer class="footer py-4">
+    <div class="container mediaFlex">
 
-        </a>
+
+        <div class="footer-col px-4">
+            <h4 class="h5 fw-bold">Orinoco</h4>
+            <ul class="list-unstyled py-3 ">
+                <li><a href="#">A propos de nous</a></li>
+                <li><a href="#">Nos Service</a></li>
+                <li><a href="#">Programme de fidélité</a></li>
+            </ul>
+        </div>
+        <div class="footer-col px-4">
+            <h4 class="h5 fw-bold">Commande & Livraison</h4>
+            <ul class="list-unstyled py-3 ">
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Suivi de commande</a></li>
+                <li><a href="#">Retourner un article</a></li>
+                <li><a href="#">Mode de livraison</a></li>
+
+            </ul>
+        </div>
+        <div class="footer-col px-4">
+            <h4 class="h5 fw-bold">Informations</h4>
+            <ul class="list-unstyled py-3">
+                <li><a href="#">Mentions légales et
+                        confidentialité</a></li>
+                <li><a href="#">Conditions générales
+                        de vente</a></li>
+                <li><a href="mailto:contact@oronico.com" aria-label="contact par mail">Contactez notre
+                        équipe</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="footer-col px-3">
+            <h4 class="h5 fw-bold">Suivez nous</h4>
+            <div class="social-links py-3">
+                <a href="#" aria-label=" reseau social facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label=" reseau social twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="reseau social instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="reseau social linked"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
     </div>
 
-    <div class="container text-center">
-
-        <div class="row gy-3">
-            <div class="col-sm-3"><span><i class="fas fa-user-lock fa-2x"></i></span>
-                <h5>Paiement sécurisé</h5>
-            </div>
-
-            <div class="col-sm-3">
-                <span><i class="fas fa-shipping-fast fa-2x"></i></span>
-                <h5>Livraison rapide</h5>
-                <p class="size-p">Expédition sous 48h</p>
-            </div>
-
-            <div class="col-sm-3"><span><i class="far fa-clock fa-2x"></i></span>
-                <h5>Service client 24/7</h5>
-                <p class="size-p">Besoin d'aide ? Nous sommes là pour vous écouter</p>
-            </div>
-
-            <div class="col-sm-3">
-
-                <i class="fas fa-at"></i>
-                <a href="mailto:contact@oronico.com">Contactez notre équipe</a>
-
-            </div>
-
-        </div>
-    </div>
-
-
-    <div class="container text-center">
-
-        <div class="row">
-
-            <div class="col-sm">
-                <h5 class="fw-bold">Commande & livraison</h5>
-                <ul class="list-unstyled">
-                    <li class="f-size"><a href="#" class="text-decoration-none">Modalités de
-                            retour</a></li>
-                    <li class=" f-size"><a href="#" class="text-decoration-none">Suivi de commande</a></li>
-                    <li class=" f-size"><a href="#" class="text-decoration-none">Colissimo</a></li>
-                    <li class=" f-size"><a href="#" class="text-decoration-none">Chronopost</a></li>
-                </ul>
-            </div>
-
-
-            <div class="col-sm">
-                <h5 class="fw-bold">Informations</h5>
-                <ul class="list-unstyled">
-                    <li class="f-size"><a href="#" class="text-decoration-none">Mentions légales et confidentialité</a>
-                    </li>
-                    <li class=" f-size"><a href="#" class="text-decoration-none">Conditions générale de vente</a></li>
-                    <li class="f-size"><a href="#" class="text-decoration-none">Qui sommes nous ?</a></li>
-                    <li class="f-size"><a href="#" class="text-decoration-none">FAQs</a></li>
-                </ul>
-            </div>
-
-
-            <div class="col-sm">
-                <h5 class="fw-bold">Moyens de paiement</h5>
-                <ul class="list-unstyled">
-                    <li class="f-size "><a href="#" class="text-decoration-none"><i
-                                class="fab fa-cc-paypal fa-2x"></i></a></li>
-                    <li class="f-size"><a href="#" class="text-decoration-none"><i class="fab fa-cc-visa fa-2x"></i></a>
-                    </li>
-                    <li class="f-size"><a href="#" class="text-decoration-none"><i
-                                class="fab fa-cc-mastercard fa-2x"></i></a>
-                    </li>
-                </ul>
-            </div>
-
-
-
-        </div>
     </div>
 </footer>
 
