@@ -1,5 +1,5 @@
 
-//------RECUPERATION DU PANIER DU LOCALSTORAGE---------- //
+//--- RECUPERATION DU LOCALSTORAGE POUR L'INSERER SUR LA PAGE PANIER-----//
 const positionelement = document.querySelector('#container-products-card');
 
 if (localStorage.length > 0) {
@@ -24,7 +24,7 @@ if (localStorage.length > 0) {
             <td>${product.title}</td>
             <td>${product.price}€</td>
             <td>${product.lense}</td>
-            
+
         </tr> 
         `;
 
