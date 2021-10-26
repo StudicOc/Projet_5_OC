@@ -109,6 +109,7 @@
                                 <th class="col">Référence</th>
                                 <th class="col">Prix</th>
                                 <th class="col">Lentilles</th>
+                                <th class="col"></th>
                             </tr>
 
                         </thead>
@@ -128,7 +129,6 @@
                         <tbody>
                             <tr>
                                 <th class="totalityPrice">€</th>
-
                             </tr>
                         </tbody>
 
@@ -143,46 +143,54 @@
                     <form action="/" method="post" class="row gy-4" id="formContact">
                         <!--ID identification-->
                         <!--Demande d'information de l'utilisateur-->
+
                         <div class="form-group">
                             <label for="firstName">Prénom</label>
                             <input type="text" class="form-control" placeholder="" name="firstName" id="firstName"
-                                value="">
-                            <span id="error"></span>
+                                value="" required>
+                            <span class="error"></span>
                         </div>
 
                         <div class="form-group">
                             <label for="lastName" class="form-label">Nom</label>
                             <input type="text" class="form-control" name="lastName" id="lastName" placeholder=""
-                                value="">
-                            <span id="error"></span>
+                                value="" required>
+                            <span class="error"></span>
                         </div>
+
                         <div class="form-group">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" name="email" id="email"
-                                placeholder="mail@example.com" value="">
-                            <span id="error"></span>
+                                placeholder="mail@example.com" value="" required>
+                            <span class="error"></span>
                         </div>
+
                         <div class="form-group">
                             <label for="address" class="form-label">Adresse</label>
                             <input type="text" class="form-control" name="address" id="address"
-                                placeholder="Rue, avenue" value="">
-                            <span id="error"></span>
+                                placeholder="Rue, avenue" value="" required>
+                            <span class="error"></span>
                         </div>
 
                         <div class="form-group">
                             <label for="zip" class="form-label">Code postale</label>
-                            <input type="text" class="form-control" id="zip" name="zip" placeholder="">
-                            <span id="error" value=""></span>
+                            <input type="text" class="form-control" id="zip" name="zip" placeholder="" value=""
+                                required>
+                            <span class="error"></span>
                         </div>
+
                         <div class="form-group">
                             <label for="city" class="form-label">Ville</label>
-                            <input type="text" class="form-control" id="city" name="city" placeholder="" value="">
-                            <span id="error"></span>
+                            <input type="text" class="form-control" id="city" name="city" placeholder="" value=""
+                                required>
+                            <span class="error"></span>
                         </div>
+
                         <div class="form-group">
                             <label for="country" class="form-label">Pays</label>
-                            <input type="text" class="form-control" id="country" name="country" placeholder="" value="">
-                            <span id="error"></span>
+                            <input type="text" class="form-control" id="country" name="country" placeholder="" value=""
+                                required>
+                            <span class="error"></span>
                         </div>
 
 
@@ -254,7 +262,7 @@
 
     </div>
 
-    </div>
+
 </footer>
 
 

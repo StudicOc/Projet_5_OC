@@ -35,28 +35,27 @@ if (localStorage.length > 0) {
     totalityPrice.innerText = priceTotal;
 } else {
     positionelement.innerHTML = `
-     <div class="text-center">
-     <p>Votre panier est vide</p>
+     <div class="text-center my-5">
+     <p class="">Votre panier est vide</p>
      
-     <a href="index.html">Revenir à la liste </a>
+     <a class="backHome fw-bold" href="index.html">Revenir à la liste </a>
      </div>
      
     `
 }
 
-//------SUPRESSION D'UN PRODUIT ET DU PANIER -----//
-
 //--------------- VALIDATION DU FORMULAIRE----------------//
-
 //--IDENTIFICATION ET RECUPERATION DES INPUTS--//
+
 const formContact = document.querySelector('#formContact');
-let inputfirstname = document.querySelector('#firstName');
-let inputlastname = document.querySelector('#lastName');
-let inputemail = document.querySelector('#email');
-let inputadress = document.querySelector('#adress');
-let inputzip = document.querySelector('#zip');
-let inputtcity = document.querySelector('#city');
-let inputcountry = document.querySelector('#country');
+let inputFirstname = document.querySelector('#firstName');
+let inputLastname = document.querySelector('#lastName');
+let inputEmail = document.querySelector('#email');
+let inputAdress = document.querySelector('#address');
+let inputZip = document.querySelector('#zip');
+let inputCity = document.querySelector('#city');
+let inputCountry = document.querySelector('#country');
+
 
 //--- CREATION DES VARIABLES POUR LE CONTROLE DE FORMAT DES INPUT AVEC RegExp---//
 const regexName = /^[a-zA-Z-\s]+$/;
@@ -65,60 +64,70 @@ const regexNumber = /^[0-9]{5}$/;
 const regexAdress = /^[a-zA-Z0-9]{5,50}$/;
 
 
-//----- 1-Ecouter la saisie des utilisateurs---//
-//--- 2-Test des inputs avec les réfles de Regex + conditions ---//
+//--- 2-Test des inputs avec les régles de Regex + conditions ---//
 
 formContact.addEventListener('submit', function (e) {
     e.preventDefault();
 
     //Test FIRSTNAME // 
-    if (!regexName.test(inputfirstname.value)) {
-        const myerror = document.querySelector('#firstName + span');
-        myerror.innerHTML = "Indiquer un nom complet ou un nom composé";
-
+    if (!regexName.test(inputFirstname.value)) {
+        const errorFirst = document.querySelector('#firstName + span');
+        errorFirst.innerHTML = "Indiquer un nom complet ou un nom composé";
     }
 
     //Test LASTNAME // 
-    if (!regexName.test(inputlastname.value)) {
-        const myerror = document.querySelector('#lastName + span');
-        myerror.innerHTML = "Indiquer un nom complet ou un nom composé";
+    if (!regexName.test(inputLastname.value)) {
+        const errorName = document.querySelector('#lastName + span');
+        errorName.innerHTML = "Indiquer un nom complet ou un nom composé";
     }
 
     //Test EMAIL // 
-    if (!regexMail.test(inputemail.value)) {
-        const myerror = document.querySelector('#email + span');
-        myerror.innerHTML = "Indiquer une adresse mail valide";
+    if (!regexMail.test(inputEmail.value)) {
+        const errorMail = document.querySelector('#email + span');
+        errorMail.innerHTML = "Indiquer une adresse mail valide";
     }
-    //Test ADRESS //
-    if (!regexAdress.test(inputadress.value)) {
-        const myerror = document.querySelector('#email + span');
-        myerror.innerHTML = "Indiquer une adresse";
-    }
-
-    // Test CITY //
-    if (!regexName.test(inputemail.value)) {
-        const myerror = document.querySelector('#email + span');
-        myerror.innerHTML = "Indiquer une ville, pas de chiffres autorisés";
+    // Test ADRESS //
+    if (!regexAdress.test(inputAdress.value)) {
+        const errorAdress = document.querySelector('#address + span');
+        errorAdress.innerHTML = "Indiquer une adresse ";
     }
     // Test ZIP //
-    if (!regexNumber.test(inputzip.value)) {
-        const myerror = document.querySelector('#email + span');
-        myerror.innerHTML = "Indiquer un code postal avec des chiffres";
+    if (!regexNumber.test(inputZip.value)) {
+        const errorzip = document.querySelector('#zip + span');
+        errorzip.innerHTML = "Indiquer un code postale avec des chiffres";
+    }
+    // Test CITY //
+    if (!regexName.test(inputCity.value)) {
+        const errorCity = document.querySelector('#city + span');
+        errorCity.innerHTML = "Indiquer une ville ";
+    }
+    // Test COUNTRY //
+    if (!regexName.test(inputCountry.value)) {
+        const errorCountry = document.querySelector('#country + span');
+        errorCountry.innerHTML = "Indiquer un pays ";
     }
 
-    //Test COUNTRY //
-    if (!regexName.test(inputcountry.value)) {
-        const myerror = document.querySelector('#email + span');
-        myerror.innerHTML = "Indiquer un pays, pas de chiffres autorisés";
+    //--- Création  de l'objet contact du formualaire et l'envoyer sur le localStorage---//
+
+
+    let contact = {
+        'firstName': inputFirstname.value,
+        'lastName': inputLastname.value,
+        'email': inputEmail.value,
+        'address': inputAdress.value,
+        'zip': inputZip.value,
+        'city': inputCity.value,
+        'country': inputCountry.value
     }
-
-
+    console.log(contact);
+    localStorage.setItem("contact", JSON.stringify(contact));
 });
 
-
-//--- Création de l'objet contact---//
-
 // --------ENVOI DES DONNEES AU SERVEUR DU FORMULAIRE ET PANIER ------------- //
+
+ //--- Méthode POST --- //
+
+
 
 
 

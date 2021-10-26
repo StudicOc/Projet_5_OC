@@ -14,7 +14,7 @@ fetch('http://localhost:3000/api/cameras/') //Afficher les objets sur la page we
       productList.innerHTML += `
       
         <div class="row d-flex justify-content-center my-5">
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-lg-4">
         <a href="./produit.html?id=${product._id}">
         <div class="card shadow">
         <img class="card-img-top"src='${product.imageUrl}' alt='' /> 

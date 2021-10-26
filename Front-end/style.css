@@ -48,6 +48,19 @@ article {
   cursor: pointer;
 }
 
+.backHome {
+  border: 0px solid #ded9d9;
+  border-radius: 40px;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 1em;
+  background: linear-gradient(to bottom, #C150C7, #FF8547);
+}
+
+h2 {
+  font-style: oblique;
+}
+
 .costum-bg {
   background: linear-gradient(to bottom, #C150C7, #FF8547);
 }
