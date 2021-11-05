@@ -14,149 +14,141 @@ body {
   
 }
 
-
- 
- img {
-   object-fit: cover;
- }
-
-i.fas.fa-user,
-.fa-heart,
-.fa-cart-arrow-down {
-  margin-right: 0.5em;
-}
-
-
-
-.size-p {
-  font-size: 0.8em;
-}
- .f-size {
-  font-size: 0.8em;
-}
-.bg-header {
-  height: 130px;
-  margin-top:2.5em;
-  
-}
-.font-header {
-  color: white;
+.bg {
+	background: linear-gradient(to bottom, #C150C7,#FF8547);
 }
  a {
    color : inherit;
    text-decoration: none;
-
      &:hover {
        color:inherit;
      }
  }
-
  article {
 cursor: pointer;
-
  }
-
- .backHome {
+  .backHome {
     border: 0px solid #ded9d9;
     border-radius: 40px;
     font-size: 14px;
     cursor: pointer;
     padding: 1em;
-	background: linear-gradient(to bottom, #C150C7,#FF8547);
+    background: linear-gradient(to bottom, #C150C7,#FF8547);
   
 }
-h2 {
-	font-style: oblique;
+ input:focus {
+  outline: none;
 }
-
-  .costum-bg {
-   background: linear-gradient(to bottom, #C150C7,#FF8547);
+ img {
+   object-fit: cover;
  }
 
-
-.footer{
-	 background: linear-gradient(to top, #C150C7,#FF8547);
+//---Gestion de l'espace confirmation.js---//
+.padddingEmptycard {
+padding-bottom: 11rem;
+padding-top: 5rem;
+}
+//---ANIMATION CSS----//
+.flotting {
+    animation: flotting 6s ease-in-out infinite;
+    -webkit-animation: flotting 6s ease-in-out infinite;
+}
+ @keyframes flotting {
+     0% {
+        transform: translate(0px);
+        -webkit-transform: translate(0px);
+        -moz-transform: translate(0px);
+        -ms-transform: translate(0px);
+        -o-transform: translate(0px);
+}
+    50% {
+        transform: translateY(-18px);
+        -webkit-transform: translateY(-18px);
+        -moz-transform: translateY(-18px);
+        -ms-transform: translateY(-18px);
+        -o-transform: translateY(-18px);
+}
+     100% {
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        -o-transform: translateY(0px);
+}
+     
+}
+//GESTION DES BORDURES//
+.border-p{
+ display: inline-block;
+ border-bottom: 2px solid #e91e63;
+   
+}
+//GESTION DES ICONES//
+i.fas.fa-user,
+.fa-cart-arrow-down {
+  margin-right: 0.5em;
 }
 
+// GESTION DU FOOTER //
+.footer{
+     background: linear-gradient(to top, #C150C7,#FF8547);
+}
 .footer-col h4{
-	font-size: 15px;
-	color:black;
-	text-transform: capitalize;
-	position: relative;
+    font-size: 15px;
+    color:black;
+    text-transform: capitalize;
+    position: relative;
 }
 .footer-col h4::before{
-	content: '';
-	position: absolute;
-	left:0;
-	bottom: -10px;
-	background-color: #e91e63;
-	height: 2px;
-	box-sizing: border-box;
-	width: 50px;
+    content: '';
+    position: absolute;
+    left:0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
 }
 
 .footer-col ul li a{
-	font-size: 14px;
-	text-transform: capitalize;
-	color:black;
-	text-decoration: none;
-	color:black;
-	display: block;
-	transition: all 0.3s ease;
+    font-size: 14px;
+    text-transform: capitalize;
+    color:black;
+    text-decoration: none;
+    color:black;
+    display: block;
+    transition: all 0.3s ease;
+           &:hover{
+    padding-left: 8px;
 }
-.footer-col ul li a:hover{
-	padding-left: 8px;
 }
-.footer-col .social-links a{
-	display: inline-block;
-	height: 40px;
-	width: 40px;
-	background-color: rgba(255,255,255,0.2);
-	text-align: center;
-	line-height: 40px;
-	border-radius: 50%;
-	color: #ffffff;
-	transition: all 0.5s ease;
+.footer-col .social-links  a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255,255,255,0.2);
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+&:hover{
+    color: #24262b;
+    background-color: #ffffff;
 }
-.footer-col .social-links a:hover{
-	color: #24262b;
-	background-color: #ffffff;
 }
-// Animation css //
-
-.flotting {
-	animation: flotting 6s ease-in-out infinite;
-	-webkit-animation: flotting 6s ease-in-out infinite;
-}
- @keyframes flotting {
-	 0% {
-		transform: translate(0px);
-		-webkit-transform: translate(0px);
-		-moz-transform: translate(0px);
-		-ms-transform: translate(0px);
-		-o-transform: translate(0px);
-}
-	50% {
-		transform: translateY(-18px);
-		-webkit-transform: translateY(-18px);
-		-moz-transform: translateY(-18px);
-		-ms-transform: translateY(-18px);
-		-o-transform: translateY(-18px);
+.borderCard {
+    border: 2px solid black;
+    padding: 6px;
+    background-color: black;
 }
 
-	 100% {
-		transform: translateY(0px);
-		-webkit-transform: translateY(0px);
-		-moz-transform: translateY(0px);
-		-ms-transform: translateY(0px);
-		-o-transform: translateY(0px);
-}
-	 
-}
-@media(min-width: 767px){
- 
+// BREAKPOINT //
+
+@media screen and (min-width : 1100px){
+
 	.mediaFlex {
-		display: inline-flex;
+		display: flex;
 	}
+	
 }
-
