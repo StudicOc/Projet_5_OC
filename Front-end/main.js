@@ -1,35 +1,40 @@
-/* Identification des fonctions à coder
-document.getElementById() 
-inner.html 
-/* Joindre l'API */
-/*Paramètres des API=GET*/
+//---- GESTION DE L'AFFICHE DES ELEMENTS DE L'API DANS LE DOM---//
 
 const productList = document.getElementById("productList");
-fetch('http://localhost:3000/api/cameras/') //Afficher les objets sur la page web
+//---RECUPERATION DES DONNEES DE L'API---//
+fetch('http://localhost:3000/api/cameras/')
   .then(response => response.json())
   .then(data => {
 
-    for (let product of data) { /* Affichage des donneés par une boucle */
+    for (let product of data) {
       console.log(product);
       productList.innerHTML += `
-      
-        <div class="row d-flex justify-content-center my-5">
-        <div class="col-sm-6 col-lg-4">
+       <article>
+          <div class="container d-flex justify-content-center my-3 py-3 ">
+        <div class=" col col-lg-4">
         <a href="./produit.html?id=${product._id}">
         <div class="card shadow">
         <img class="card-img-top"src='${product.imageUrl}' alt='' /> 
         <div class="card-body">
         <h2 class="card-title">${product.name}</h2>
-        <p class="card-text">${product.price}€</p>
+        <p class="card-text">${product.price / 100}€</p>
         </div>
         </a>
         </div>
         </div>
         </div>
+        </article>
+        
+       
       
       `;
 
+
     }
+    //---Transfert du panier-changement de page--//
+
+    document.querySelector('.cart span').textContent = localStorage.length;
+
   }
 
 
