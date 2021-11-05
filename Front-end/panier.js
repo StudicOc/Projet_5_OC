@@ -1,156 +1,189 @@
 
-//--- RECUPERATION DU LOCALSTORAGE POUR L'INSERER SUR LA PAGE PANIER-----//
-const positionelement = document.querySelector('#container-products-card');
+//-----GESTION DU PANIER----//
+//---RECUPERATION DES ELEMENTS DU DOM---//
+let positionElement = document.querySelector('#container-products-card');
+let cartTablebody = document.querySelector('#cart-tablebody');
+let totalityPrice = document.querySelector('.subtotal');
+let products = []; //---Construction du tableau produit---//
+let Total = 0;//---Valeur de départ pour calculer le prix final---//
 
 if (localStorage.length > 0) {
-
-    let productBody = document.querySelector('.productBody');
-    let totalityPrice = document.querySelector('.totalityPrice');
-    let priceTotal = 0;
-
-    //-------BOUCLE, AFFICHAGE DU CONTENU DU LOCALSTORAGE SUR LA PAGE PANIER----//
-
+    //---RECUPERATION DU PANIER DANS LE LOCAL STORAGE---//
     for (let key in localStorage) {
-
+        //---Conversion des données au format json du localStorage en objet JS--//
         let product = JSON.parse(localStorage.getItem(key));
         document.querySelector('.cart span').textContent = localStorage.length;
-
-        //---CONDITION SI DES ARTICLES SONT DANS LE LOCAL STORAGE---//
-        // = ALIMENTER LE PANIER //
         if (product) {
-            console.log(product);
-            productBody.innerHTML += `
+            // console.log(product);//
+            products.push(key);
+            cartTablebody.innerHTML += `
+          
         <tr>
             <td>${product.title}</td>
-            <td>${product.price}€</td>
-            <td>${product.lense}</td>
-
+            <td>${product.price / 100}€</td>
         </tr> 
+       
         `;
 
-            priceTotal += product.price;
+            //---Utilisatation des opérateurs logiques pour le prix final---//
+            Total += product.price / 100;
+
+
         }
+        //--Envoi du prix total dans le localStorage--//
 
     }
 
-    totalityPrice.innerText = priceTotal;
-} else {
-    positionelement.innerHTML = `
-     <div class="text-center my-5">
-     <p class="">Votre panier est vide</p>
-     
-     <a class="backHome fw-bold" href="index.html">Revenir à la liste </a>
-     </div>
-     
-    `
+    //--- Si la condition n'est pas true, renvoyer un message aux utilisateurs---//
+    totalityPrice.innerText = Total;
+    console.log(Total);
+    sessionStorage.setItem('Total', JSON.stringify(Total));
 }
 
-//--------------- VALIDATION DU FORMULAIRE----------------//
-//--IDENTIFICATION ET RECUPERATION DES INPUTS--//
 
-const formContact = document.querySelector('#formContact');
-let inputFirstname = document.querySelector('#firstName');
-let inputLastname = document.querySelector('#lastName');
-let inputEmail = document.querySelector('#email');
-let inputAdress = document.querySelector('#address');
-let inputZip = document.querySelector('#zip');
-let inputCity = document.querySelector('#city');
-let inputCountry = document.querySelector('#country');
+else {
 
 
-//--- CREATION DES VARIABLES POUR LE CONTROLE DE FORMAT DES INPUT AVEC RegExp---//
+    positionElement.innerHTML = `
+     <div class="container padddingEmptycard my-5">
+     <div class=" text-center">
+       <h4 class="h5 fw-bold py-3">Votre panier est vide</h4>
+        <div class="border-p">
+        <p>Remplissez-le avec notre gamme</p>
+        </div>
+        <div class=" my-5">
+        <a href="./index.html" class="borderCard text-white">
+        <span>Continuez mes achats</span>
+        </a>
+     </div>
+
+
+    </div>
+
+
+    
+    `;
+
+
+}
+
+
+//-------VALIDATION DU FORMUALIRE--------- //
+//--IDENTIFICATION ET RECUPERATION DES VALEURS INPUTS--//
+const formEl = document.getElementById('formContact');
+const firstName = document.getElementById('firstName');
+const lastName = document.getElementById('lastName');
+const email = document.getElementById('email');
+const address = document.getElementById('address');
+const city = document.getElementById('city');
+const submitEl = document.getElementById('submitButton');
+
+//---REGEX---//
 const regexName = /^[a-zA-Z-\s]+$/;
-const regexMail = new RegExp('^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$', 'g');
-const regexNumber = /^[0-9]{5}$/;
-const regexAdress = /^[a-zA-Z0-9]{5,50}$/;
+const regexMail = new RegExp('^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$');
+const regexAdress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,20}$/;
+
+let error = true;
 
 
-//--- 2-Test des inputs avec les régles de Regex + conditions ---//
-
-formContact.addEventListener('submit', function (e) {
+document.querySelector('#formContact').addEventListener('input', e => {
     e.preventDefault();
 
-    //Test FIRSTNAME // 
-    if (!regexName.test(inputFirstname.value)) {
-        const errorFirst = document.querySelector('#firstName + span');
-        errorFirst.innerHTML = "Indiquer un nom complet ou un nom composé";
+    const borderSuccess = " #7EEA5E solid 2px";
+    const borderError = 'red solid 2px';
+    switch (e.target.id) { //---Boîtier de commutation- Vérification personnalisé de chaque input--//
+        //TEST FIRSTNAME //
+        case 'firstName':
+            if (regexName.test(firstName.value)) {
+                error = false;
+                e.target.style.border = borderSuccess;
+            } else {
+                error = true;
+                e.target.style.border = borderError;
+            }
+            break;
+        // TEST LASTNAME //
+        case 'lastName':
+            if (regexName.test(lastName.value)) {
+                error = false;
+                e.target.style.border = borderSuccess;
+            } else {
+                error = true;
+                e.target.style.border = borderError;
+            }
+            break;
+        // TEST EMAIL //
+        case 'email':
+            if (regexMail.test(email.value)) {
+                error = false;
+                e.target.style.border = borderSuccess;
+            } else {
+                error = true;
+                e.target.style.border = borderError;
+            }
+            break;
+        // TEST ADDRESS //
+        case 'address':
+            if (regexAdress.test(address.value)) {
+                error = false;
+                e.target.style.border = borderSuccess;
+            } else {
+                error = true;
+                e.target.style.border = borderError;
+            }
+            break;
+        // TEST CITY //
+        case 'city':
+            if (regexName.test(city.value)) {
+                error = false;
+                e.target.style.border = borderSuccess;
+            } else {
+                error = true;
+                e.target.style.border = borderError;
+            }
+            break;
     }
-
-    //Test LASTNAME // 
-    if (!regexName.test(inputLastname.value)) {
-        const errorName = document.querySelector('#lastName + span');
-        errorName.innerHTML = "Indiquer un nom complet ou un nom composé";
-    }
-
-    //Test EMAIL // 
-    if (!regexMail.test(inputEmail.value)) {
-        const errorMail = document.querySelector('#email + span');
-        errorMail.innerHTML = "Indiquer une adresse mail valide";
-    }
-    // Test ADRESS //
-    if (!regexAdress.test(inputAdress.value)) {
-        const errorAdress = document.querySelector('#address + span');
-        errorAdress.innerHTML = "Indiquer une adresse ";
-    }
-    // Test ZIP //
-    if (!regexNumber.test(inputZip.value)) {
-        const errorzip = document.querySelector('#zip + span');
-        errorzip.innerHTML = "Indiquer un code postale avec des chiffres";
-    }
-    // Test CITY //
-    if (!regexName.test(inputCity.value)) {
-        const errorCity = document.querySelector('#city + span');
-        errorCity.innerHTML = "Indiquer une ville ";
-    }
-    // Test COUNTRY //
-    if (!regexName.test(inputCountry.value)) {
-        const errorCountry = document.querySelector('#country + span');
-        errorCountry.innerHTML = "Indiquer un pays ";
-    }
-
-    //--- Création  de l'objet contact du formualaire et l'envoyer sur le localStorage---//
-
-
-    let contact = {
-        'firstName': inputFirstname.value,
-        'lastName': inputLastname.value,
-        'email': inputEmail.value,
-        'address': inputAdress.value,
-        'zip': inputZip.value,
-        'city': inputCity.value,
-        'country': inputCountry.value
-    }
-    console.log(contact);
-    localStorage.setItem("contact", JSON.stringify(contact));
 });
 
-// --------ENVOI DES DONNEES AU SERVEUR DU FORMULAIRE ET PANIER ------------- //
+formEl.onsubmit = e => {
+    e.preventDefault();
 
- //--- Méthode POST --- //
+    if (error) {
+        alert('Veuillez remplir correctement le formulaire');
+        return;
+    }
+
+    else {
+        //---CREATION DE L'OBJET CONTACT---//
+        let contact = {
+            firstName: firstName.value,
+            lastName: lastName.value,
+            email: email.value,
+            address: address.value,
+            city: city.value
+        };
+
+        console.log(contact);
+        fetch("http://localhost:3000/api/cameras/order", {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ products, contact }),
+        })
+            .then(response => response.json())
+            .then(function (res) {
+                // Enregistrer orderId dans sessionStorage//
+                sessionStorage.setItem('orderId', res.orderId);
+                window.location.assign("confirmation.html?orderId=" + res.orderId);
+                //sessionStorage.clear();
+            });
 
 
+    }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+};
 
 
