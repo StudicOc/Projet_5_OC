@@ -1,9 +1,9 @@
 
-//---CREATION DE L'URL - REDIRECTION DE LA PAGE---//
+
 const params = new URLSearchParams(window.location.search);
 const id = params.get('id');
 
-
+//--PARCOURIR LE DOM--//
 const optionLenses = document.getElementById('optionLenses');
 let title = document.querySelector('.card-title');
 let description = document.querySelector('.card-text');
