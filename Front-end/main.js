@@ -7,7 +7,8 @@ fetch('http://localhost:3000/api/cameras/')
   .then(data => {
 
     for (let product of data) {
-      console.log(product); //---Vérification si la requête affiche les articles---//
+      //---Vérification si la requête affiche les articles---//
+      console.log(product);
       productList.innerHTML += `
        <article>
           <div class="container d-flex justify-content-center my-3 py-3 ">
