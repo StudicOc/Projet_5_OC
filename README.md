@@ -1,7 +1,5 @@
 # Projet_5_OC
-<<<<<<< HEAD
-Build an e-commerce site in JavaScript
-=======
+
 
 Réalisation de la partie front-end pour Orinoco, un
 entreprise souhaitant étaller ses serices sur le web et obtenir un site e-commerce.
@@ -24,7 +22,3 @@ Nous utiliserons le Javascript pour apporter un dynamisme au site.
 
 Le site se compose de 4 pages Acceuil, produit séléctionné, panier et confirmation de commande. 
 
-
-
-
->>>>>>> 5875818e90d3037a7e5c9c7dfe5db7c1756230da

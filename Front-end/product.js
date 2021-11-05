@@ -11,7 +11,6 @@ let price = document.querySelector('.card-price');
 let img = document.querySelector('.card-img-top');
 let addCart = document.querySelector('.add-card');
 
-
 fetch(`http://localhost:3000/api/cameras/${id}`)
   .then(response => response.json())
 

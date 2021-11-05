@@ -39,8 +39,6 @@ if (localStorage.length > 0) {
     console.log(Total);
     sessionStorage.setItem('Total', JSON.stringify(Total));
 }
-
-
 else {
 
 

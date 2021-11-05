@@ -1,6 +1,4 @@
-//----GESTION DE LA PAGE DE CONFIRMATION---//
-
-
+//----GESTION DE LA PAGE DE CONFIRMATION--//
 //--- IMPLEMENTATION HTML DE L'AFFICHAGE CONFIRMATION DE COMMANDE---//
 let cardConfirm = document.querySelector('#card-confirm');
 let orderId = sessionStorage.getItem('orderId');
