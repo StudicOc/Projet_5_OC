@@ -1,4 +1,3 @@
-
 //-----GESTION DU PANIER----//
 //---RECUPERATION DES ELEMENTS DU DOM---//
 let positionElement = document.querySelector('#container-products-card');
@@ -30,7 +29,7 @@ if (localStorage.length > 0) {
 
 
         }
-        //--Envoi du prix total dans le localStorage--//
+
 
     }
 
@@ -44,20 +43,24 @@ else {
 
     positionElement.innerHTML = `
      <div class="container padddingEmptycard my-5">
+
      <div class=" text-center">
+
        <h4 class="h5 fw-bold py-3">Votre panier est vide</h4>
+
         <div class="border-p">
         <p>Remplissez-le avec notre gamme</p>
         </div>
+
         <div class=" my-5">
         <a href="./index.html" class="borderCard text-white">
         <span>Continuez mes achats</span>
         </a>
-     </div>
+        </div>
+
     </div>
 
-
-    
+    </div>
     `;
 
 
@@ -181,5 +184,3 @@ formEl.onsubmit = e => {
 
 
 };
-
-
