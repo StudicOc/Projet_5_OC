@@ -1,4 +1,4 @@
-//---- GESTION DE L'AFFICHE DES ELEMENTS DE L'API DANS LE DOM---//
+//---- GESTION DE L'AFFICHAGE DES ELEMENTS DE L'API DANS LE DOM---//
 
 const productList = document.getElementById("productList");
 //---RECUPERATION DES DONNEES DE L'API---//
