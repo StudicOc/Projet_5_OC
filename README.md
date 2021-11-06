@@ -18,5 +18,5 @@ Nous utiliserons pour cela les méthodes GET et POST afin de récupérez des don
 
 Nous utiliserons le Javascript pour apporter un dynamisme au site. 
 
-Le site se compose de 4 pages Acceuil, produit séléctionné, panier et confirmation de commande. 
+Le site se compose de 4 pages l'acceuil, produit séléctionné, panier et confirmation de commande. 
 
