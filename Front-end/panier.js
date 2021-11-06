@@ -42,7 +42,7 @@ else {
 
 
     positionElement.innerHTML = `
-     <div class="container padddingEmptycard my-5">
+     <div class="container padddingEmptycard">
 
      <div class=" text-center">
 
@@ -53,7 +53,7 @@ else {
         </div>
 
         <div class=" my-5">
-        <a href="./index.html" class="borderCard text-white">
+        <a href="/Front-end/index.html" class="borderCard text-white">
         <span>Continuez mes achats</span>
         </a>
         </div>
