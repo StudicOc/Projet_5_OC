@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content=" Orinoco est spécialisé dans la vente de caméras vintage. Nous vous proposons avec cette gamme
-    différents lentilles optiques pour capturer les meilleurs moments.   " />
+                    différents lentilles optiques pour capturer les meilleurs moments.   " />
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="/Front-end/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
@@ -25,11 +25,10 @@
     <title>Orinoco-Découvrez nos articles</title>
 </head>
 
-
 <header id="header">
     <!--Boostrap 5, navbar responsive-->
     <!-- Navigation principal-->
-    <nav class="navbar navbar-expand-lg navbar-light bg">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light bg">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="#!">Orinoco</a>
 
@@ -47,13 +46,12 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="mailto:contact@oronico.com">Contact</a></li>
                 </ul>
-
+                <!--nav secondaire costumer-->
                 <ul class="navbar-nav flex-row flex-wrap ms-md-auto nav-costumer">
                     <li class="nav-item "><a class="nav-link" href="#"><i class="fas fa-user"></i></a></li>
-                    <li class="nav-item cart ">
-                        <a class="nav-link " href="panier.html">
-                            <i class="fas fa-cart-arrow-down"></i><span>0</span>
-                        </a>
+                    <li class="nav-item cart">
+                        <a class="nav-link " href="./panier.html">
+                            <i class="fas fa-cart-arrow-down"></i><span>0</span> </a>
                     </li>
                     <li class="nav-item "><a class="nav-link" href="confirmation.html">Commande</a>
                     </li>
@@ -62,100 +60,76 @@
         </div>
     </nav>
 
+    <!-- Header-Introduction-->
+    <section class=" py-2 costum-bg">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center  flotting">
+                <h1 class="display-4 fw-bold">Un style unique</h1>
+                <p class="lead fw-normal mb-0">Des caméras vintage et ses options uniques</p>
+            </div>
+        </div>
+    </section>
+
 </header>
 
 
+
+
 <main id="home">
+    <!--Contenu principal-->
+    <!-- Section product-->
     <section>
+        <div class="container text-center my-5 ">
+            <div>
 
-        <div class="container" id="container-products-card">
-            <h3 class="text-center my-4"> Bienvenue sur votre panier d'achat</h3>
-
-            <div class="row d-flex justify-content-center">
-                <div class="col-lg-4">
-                    <div class="card">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Article</th>
-                                    <th>Prix</th>
-                                </tr>
-                            </thead>
-                            <tbody id="cart-tablebody"></tbody>
-                        </table>
-                        <div class="cart-total text-center">
-                            <p>Sous total : <span class="subtotal"></span>€</p>
-                        </div>
-                    </div>
-
-                </div>
             </div>
+
+
+
         </div>
-
-
-
-
-
-        <div class="row  d-flex justify-content-center">
-            <h4 class="text-center">Complétez le formulaire pour passer commande</h4>
-            <div class="col-lg-4">
-                <p class="note">Les champs marqué d'une étoile sont obligatoires.</p>
-                <form action="" method="post" class="row gy-4" id="formContact">
-                    <div class=" form-group">
-                        <label for="firstName">Prénom*</label>
-                        <input type="text" class="form-control" placeholder="" name="firstName" id="firstName" value="">
-                        <span class="error"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="lastName" class="form-label">Nom *</label>
-                        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="" value="">
-                        <span class="error"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email *</label>
-                        <input type="email" class="form-control" name="email" id="email" placeholder="mail@example.com"
-                            value="">
-                        <span class="error"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="address" class="form-label">Adresse *</label>
-                        <input type="text" class="form-control" name="address" id="address" placeholder="" value="">
-                        <span class="error"></span>
-                    </div>
-
-
-
-                    <div class="form-group">
-                        <label for="city" class="form-label">Ville *</label>
-                        <input type="text" class="form-control" id="city" name="city" placeholder="" value="">
-                        <span class="error"></span>
-                    </div>
-
-
-
-                    <div class=" form-group my-4 text-center ">
-                        <button class="btn  btnSubmit fw-bold btn-secondary" id="submitButton" type="submit"
-                            value="envoyer">Valider ma commande</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        </div>
-
-
-
-
-
-
-
     </section>
 
+    <section>
 
+        <div class="container text-center my-5">
+
+            <article>
+                <div>
+                    <a href="./index.html">Retour à l'acceuil</a>
+                </div>
+
+                <h3 class="fw-bold"> Personnaliser votre produit <i class="fas fa-camera-retro"></i></h3>
+
+
+
+                <div id="productList">
+                    <div class="row justify-content-center my-5">
+                        <div class="col col-md-7 col-lg-4 ">
+
+                            <div class="card shadow">
+                                <img class="card-img-top" src='' alt='' />
+                                <div class="card-body">
+                                    <h2 class="card-title"></h2>
+                                    <p class="card-text"></p>
+                                    <p class="card-price">€</p>
+                                    <label>Choississez vos lentilles</label>
+                                    <select class="form-select" aria-label="Default select example" id="optionLenses"
+                                        name="lenses">
+                                    </select>
+                                </div>
+                                <div class="card-footer">
+                                    <button class="btn btn-primary add-card" type="submit">Ajouter au
+                                        panier</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
 </main>
-
 
 <footer class="footer py-4">
     <div class="container mediaFlex">
@@ -204,19 +178,15 @@
 
     </div>
 
+    </div>
 </footer>
-
-
-
-
 
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-<script src="./panier.js"></script>
-
+<script src="/Front-end/js/product.js"></script>
 </body>
 
 
