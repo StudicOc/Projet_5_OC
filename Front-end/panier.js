@@ -54,8 +54,6 @@ else {
         <span>Continuez mes achats</span>
         </a>
      </div>
-
-
     </div>
 
 

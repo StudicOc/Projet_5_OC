@@ -22,7 +22,6 @@ fetch(`http://localhost:3000/api/cameras/${id}`)
     price.innerText = data.price / 100;
     img.src = data.imageUrl;
 
-
     for (let lense of data.lenses) {
       optionLenses.innerHTML += `<option value="${lense}">${lense}</option>`;
     }
