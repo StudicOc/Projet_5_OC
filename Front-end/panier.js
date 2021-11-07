@@ -1,4 +1,6 @@
 //-----GESTION DU PANIER----//
+
+
 //---RECUPERATION DES ELEMENTS DU DOM---//
 let positionElement = document.querySelector('#container-products-card');
 let cartTablebody = document.querySelector('#cart-tablebody');
@@ -12,6 +14,7 @@ if (localStorage.length > 0) {
         //---Conversion des données au format json du localStorage en objet JS--//
         let product = JSON.parse(localStorage.getItem(key));
         document.querySelector('.cart span').textContent = localStorage.length;
+
         if (product) {
             // console.log(product);//
             products.push(key);
@@ -23,12 +26,12 @@ if (localStorage.length > 0) {
         </tr> 
        
         `;
-            //---Utilisatation des opérateurs logiques pour le prix final---//
+            //---Calcule du total---//
             Total += product.price / 100;
         }
 
     }
-    //--- Si la condition n'est pas true, renvoyer un message aux utilisateurs---//
+    //---Affichage du prix total---//
     totalityPrice.innerText = Total;
     console.log(Total);
     sessionStorage.setItem('Total', JSON.stringify(Total));
@@ -84,9 +87,10 @@ document.querySelector('#formContact').addEventListener('input', e => {
     const borderSuccess = " #7EEA5E solid 2px";
     const borderError = 'red solid 2px';
     switch (e.target.id) { //---Boîtier de commutation- Vérification personnalisé de chaque input--//
+
         //TEST FIRSTNAME //
         case 'firstName':
-            if (regexName.test(firstName.value)) {
+            if (regexName.test(firstName.value)) { //---Aucun nombre ou chiffre ne sera accepté--//
                 error = false;
                 e.target.style.border = borderSuccess;
             } else {
@@ -106,7 +110,7 @@ document.querySelector('#formContact').addEventListener('input', e => {
             break;
         // TEST EMAIL //
         case 'email':
-            if (regexMail.test(email.value)) {
+            if (regexMail.test(email.value)) {//---Format mail accepté--//
                 error = false;
                 e.target.style.border = borderSuccess;
             } else {
@@ -137,7 +141,7 @@ document.querySelector('#formContact').addEventListener('input', e => {
     }
 });
 
-formEl.onsubmit = e => {
+formEl.onsubmit = e => { //---Vérification lors de l'envoit du formulaire--//
     e.preventDefault();
 
     if (error) {
@@ -146,7 +150,7 @@ formEl.onsubmit = e => {
     }
 
     else {
-        //---CREATION DE L'OBJET CONTACT---//
+        //---Si aucune erreur detecté = CREATION DE L'OBJET CONTACT---//
         let contact = {
             firstName: firstName.value,
             lastName: lastName.value,
@@ -155,7 +159,9 @@ formEl.onsubmit = e => {
             city: city.value
         };
 
-        console.log(contact);
+        console.log(contact);//---Vérification si l'objet contact est bien crée--//
+
+
         fetch("http://localhost:3000/api/cameras/order", {
             method: "POST",
             headers: {
@@ -165,8 +171,9 @@ formEl.onsubmit = e => {
             body: JSON.stringify({ products, contact }),
         })
             .then(response => response.json())
+            //--- Vérification 200  si la requête a réussi et qu'une ressource a été créée---//
             .then(function (res) {
-                // Enregistrer orderId dans sessionStorage//
+                // Enregistrement orderId dans sessionStorage//
                 sessionStorage.setItem('orderId', res.orderId);
                 window.location.assign("confirmation.html?orderId=" + res.orderId);
                 //sessionStorage.clear();
