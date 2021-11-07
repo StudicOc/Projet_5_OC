@@ -23,24 +23,20 @@ if (localStorage.length > 0) {
         </tr> 
        
         `;
-
             //---Utilisatation des opérateurs logiques pour le prix final---//
             Total += product.price / 100;
-
-
         }
 
-
     }
-
     //--- Si la condition n'est pas true, renvoyer un message aux utilisateurs---//
     totalityPrice.innerText = Total;
     console.log(Total);
     sessionStorage.setItem('Total', JSON.stringify(Total));
+
+
 }
+
 else {
-
-
     positionElement.innerHTML = `
      <div class="container padddingEmptycard">
 
@@ -61,12 +57,9 @@ else {
     </div>
 
     </div>
+     
     `;
-
-
 }
-
-
 //-------VALIDATION DU FORMUALIRE--------- //
 //--IDENTIFICATION ET RECUPERATION DES VALEURS INPUTS--//
 const formEl = document.getElementById('formContact');
