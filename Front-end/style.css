@@ -42,6 +42,10 @@ img {
      object-fit: cover;
 }
 
+.size-h2, h1 {
+  font-size: 2rem;
+}
+
 .padddingEmptycard {
   padding-bottom: 11rem;
   padding-top: 5rem;
