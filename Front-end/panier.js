@@ -10,13 +10,14 @@ let Total = 0;//---Valeur de départ pour calculer le prix final---//
 
 if (localStorage.length > 0) {
     //---RECUPERATION DU PANIER DANS LE LOCAL STORAGE---//
+
     for (let key in localStorage) {
         //---Conversion des données au format json du localStorage en objet JS--//
         let product = JSON.parse(localStorage.getItem(key));
         document.querySelector('.cart span').textContent = localStorage.length;
 
         if (product) {
-            // console.log(product);//
+            console.log(product);
             products.push(key);
             cartTablebody.innerHTML += `
           

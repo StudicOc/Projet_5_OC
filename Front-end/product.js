@@ -1,10 +1,4 @@
 
-
-//----CONSTRUICTION DE LA NOUVELLE URL-------//
-const params = new URLSearchParams(window.location.search);
-//---Retournera la première valeur associée au paramètre de recherche donné "id"--//
-const id = params.get('id');
-
 //--PARCOURIR LE DOM--//
 const optionLenses = document.getElementById('optionLenses');
 let title = document.querySelector('.card-title');
@@ -12,6 +6,11 @@ let description = document.querySelector('.card-text');
 let price = document.querySelector('.card-price');
 let img = document.querySelector('.card-img-top');
 let addCart = document.querySelector('.add-card');
+
+//----CONSTRUICTION DE LA NOUVELLE URL-------//
+const params = new URLSearchParams(window.location.search);
+//---Retournera la première valeur associée au paramètre de recherche donné "id"--//
+const id = params.get('id');
 
 //---REQUETE HTTP VERS L'API*** AVEC LA METHODE GET----//
 
@@ -41,13 +40,13 @@ fetch(`http://localhost:3000/api/cameras/${id}`) //--Affichage du produit sélé
     //--ECOUTEUR D'EVENEMENT ET ENVOI AU LOCASTORAGE---//
     addCart.addEventListener('click', () => {
 
-      //---Au click envoit de l'objet product dans le local storage--//
+
       localStorage.setItem(data._id, JSON.stringify(product));
       //--- Au click envoit sur le menu le nombres d'article--//
       document.querySelector('.cart span').textContent = localStorage.length;
 
       alert("Ajouté au panier");
-      //--Si article article ajouté une alerte informera le client---//
+
 
     })
 

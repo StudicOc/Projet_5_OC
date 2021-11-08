@@ -7,6 +7,7 @@ const productList = document.getElementById("productList");
 
 fetch('http://localhost:3000/api/cameras/')
   .then(response => response.json()) //---Récupération de la reponse au format json ---//
+
   .then(data => {
 
     for (let product of data) {//---Itération pour afficher les données de l'API---//
@@ -34,8 +35,6 @@ fetch('http://localhost:3000/api/cameras/')
        
       
       `;
-
-
     }
     //---Panier static aprés un changement de page----//
 
