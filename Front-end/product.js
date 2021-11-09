@@ -35,21 +35,26 @@ fetch(`http://localhost:3000/api/cameras/${id}`) //--Affichage du produit sélé
       title: data.name,
       price: data.price,
     }
-    console.log(product); //---Vérification si 'lobjet à bien été créé--//
-
-    //--ECOUTEUR D'EVENEMENT ET ENVOI AU LOCASTORAGE---//
-    addCart.addEventListener('click', () => {
+    console.log(product); //---Vérification si l'objet a bien été créé--//
 
 
-      localStorage.setItem(data._id, JSON.stringify(product));
-      //--- Au click envoit sur le menu le nombres d'article--//
-      document.querySelector('.cart span').textContent = localStorage.length;
-
-      alert("Ajouté au panier");
 
 
-    })
+    //--ECOUTEUR D'EVENEMENT ET ENVOIE AU LOCASTORAGE---//
+
+    function sendProductLocalStorage() {
+      addCart.addEventListener('click', () => {
+        localStorage.setItem(data._id, JSON.stringify(product));
+        //--- Au click envoit sur le menu le nombres d'article--//
+        document.querySelector('.cart span').textContent = localStorage.length;
+        alert("Ajouté au panier");
+      })
+    }
+    sendProductLocalStorage();
+    //--exécute la fonction--//
 
   })
+
+
   .catch(error => console.log(error))
 
