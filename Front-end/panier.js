@@ -37,6 +37,7 @@ if (localStorage.length > 0) {
         totalityPrice.innerText = Total;
         console.log(Total);
         document.querySelector('.cart span').textContent = localStorage.length;
+        sessionStorage.setItem('Total', JSON.stringify(Total));
 
     }
     calculatePrice();

@@ -1,12 +1,11 @@
 //----GESTION DE LA PAGE DE CONFIRMATION--//
-//--- IMPLEMENTATION HTML DE L'AFFICHAGE CONFIRMATION DE COMMANDE---//
+//--- IMPLEMENTATION HTML DE L'AFFICHAGE CONFIRMATION DE COMMANDE---/
 let cardConfirm = document.querySelector('#card-confirm');
 
 let orderId = sessionStorage.getItem('orderId');
 let Total = sessionStorage.getItem('Total');
-
-
 function displayOrderCostumer() {
+
 
   if (orderId) {
     cardConfirm.innerHTML =
