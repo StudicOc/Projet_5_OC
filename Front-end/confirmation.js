@@ -4,6 +4,7 @@ let cardConfirm = document.querySelector('#card-confirm');
 
 let orderId = sessionStorage.getItem('orderId');
 let Total = sessionStorage.getItem('Total');
+
 function displayOrderCostumer() {
 
 

@@ -12,9 +12,11 @@ if (localStorage.length > 0) {
     //---RECUPERATION DU PANIER DANS LE LOCAL STORAGE---//
 
     function displayProduct() {
+
         for (let key in localStorage) {
             //---Conversion des données au format json du localStorage en objet JS--//
             let product = JSON.parse(localStorage.getItem(key));
+            document.querySelector('.cart span').textContent = products.length;;
             if (product) {
                 console.log(product);
                 products.push(key);
@@ -33,15 +35,17 @@ if (localStorage.length > 0) {
     }
     displayProduct();
 
-    function calculatePrice() {
-        totalityPrice.innerText = Total;
-        console.log(Total);
-        document.querySelector('.cart span').textContent = localStorage.length;
-        sessionStorage.setItem('Total', JSON.stringify(Total));
 
+    function calculatePrice() {
+        console.log(Total);
+        sessionStorage.setItem('total', JSON.stringify(Total))
+        totalityPrice.innerTexte = Total;
     }
     calculatePrice();
+
+
 }
+
 
 else {
     positionElement.innerHTML = `
