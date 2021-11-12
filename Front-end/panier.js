@@ -41,7 +41,7 @@ if (localStorage.length > 0) {
     function calculatePrice() {
         totalityPrice.innerText = Total;
         console.log(Total);
-        sessionStorage.settItem('Total', JSON.stringify(Total));
+        sessionStorage.setItem('Total', JSON.stringify(Total));
 
 
 
