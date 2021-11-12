@@ -113,6 +113,10 @@ i.fas.fa-user,
   margin-right: 0.5em;
 }
 
+.btnSubmit {
+  background-color: black;
+}
+
 .footer {
   background: linear-gradient(to top, #C150C7, #FF8547);
 }
