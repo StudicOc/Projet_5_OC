@@ -113,8 +113,8 @@ i.fas.fa-user,
   margin-right: 0.5em;
 }
 
-.btnSubmit {
-  background-color: black;
+.btn-outline-secondary {
+  color: black;
 }
 
 .footer {
