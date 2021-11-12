@@ -161,7 +161,7 @@ formEl.onsubmit = e => { //---Vérification lors de l'envoit du formulaire--//
     e.preventDefault();
 
     if (error) {
-        alert('Veuillez remplir correctement le formulaire');
+        alert('Veuillez remplir correctement le formulaire !');
         return;
     }
 
