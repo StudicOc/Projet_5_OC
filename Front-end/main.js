@@ -37,9 +37,10 @@ fetch('http://localhost:3000/api/cameras/')
 `;
     }
     //---Panier static aprés un changement de page----//
-
-    document.querySelector('.cart span').textContent = localStorage.length;
-
+    function displayItemReloading() {
+      document.querySelector('.cart span').textContent = localStorage.length;
+    }
+    displayItemReloading();
   }
 
     //-- mettre le catch--//

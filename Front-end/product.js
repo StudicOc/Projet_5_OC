@@ -22,7 +22,7 @@ fetch(`http://localhost:3000/api/cameras/${id}`) //--Affichage du produit sélé
     //---Mise en relation des data dans le dom pour afficher le produit sélectionné--//
     title.innerText = data.name;
     description.innerText = data.description;
-    price.innerText = data.price / 100;
+    price.innerText = data.price / 100 + "€";
     img.src = data.imageUrl;
 
     //----Création du html pour insérer les options du produit---//
@@ -33,7 +33,7 @@ fetch(`http://localhost:3000/api/cameras/${id}`) //--Affichage du produit sélé
     //--Création de l'objet produit pour envoyer les value dans le LocalStorage---//
     let product = {
       title: data.name,
-      price: data.price,
+      price: data.price / 100,
     }
     console.log(product); //---Vérification si l'objet a bien été créé--//
 
@@ -54,6 +54,8 @@ fetch(`http://localhost:3000/api/cameras/${id}`) //--Affichage du produit sélé
     //--exécute la fonction--//
 
   })
+
+
 
 
   .catch(error => console.log(error))

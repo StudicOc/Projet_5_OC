@@ -11,12 +11,14 @@ let Total = 0;
 if (localStorage.length > 0) {
     //---RECUPERATION DU PANIER DANS LE LOCAL STORAGE---//
 
-    function displayProduct() {
 
+    function displayProduct() {
         for (let key in localStorage) {
             //---Conversion des données au format json du localStorage en objet JS--//
             let product = JSON.parse(localStorage.getItem(key));
-            document.querySelector('.cart span').textContent = products.length;;
+            document.querySelector('.cart span').textContent = products.length;
+
+
             if (product) {
                 console.log(product);
                 products.push(key);
@@ -24,27 +26,31 @@ if (localStorage.length > 0) {
 
 <tr>
 <td>${product.title}</td>
-<td>${product.price / 100}€</td>
+<td>${product.price}€</td>
 </tr> 
 
 `;
                 //---Calcule du total---//
-                Total += product.price / 100;
-            }
-        }
-    }
+                Total += product.price;
+            } //--Fin de la boucle for__//
+        } //--Fin de la condition "if"--//
+    }  //--Fin de balise de la fonction--//
     displayProduct();
 
-
+    //---Affichage du prix total---//
     function calculatePrice() {
+        totalityPrice.innerText = Total;
         console.log(Total);
-        sessionStorage.setItem('total', JSON.stringify(Total))
-        totalityPrice.innerTexte = Total;
+        sessionStorage.getItem('Total', JSON.stringify(Total));
+
+
+
     }
     calculatePrice();
-
-
 }
+
+
+
 
 
 else {
