@@ -45,14 +45,14 @@ fetch(`http://localhost:3000/api/cameras/${id}`) //--Affichage du produit sélé
     function sendProductLocalStorage() {
       addCart.addEventListener('click', () => {
         localStorage.setItem(data._id, JSON.stringify(product));
-        //--- Au click envoit sur le menu le nombres d'article--//
+        //--- Au click envoie sur le menu le nombre d'article--//
         document.querySelector('.cart span').textContent = localStorage.length;
 
         alert("Ajouté au panier");
       })
     }
     sendProductLocalStorage();
-    //--exécute la fonction--//
+    //--Exécute la fonction--//
 
   })
 

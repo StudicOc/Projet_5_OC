@@ -13,7 +13,7 @@ fetch('http://localhost:3000/api/cameras/')
     for (let product of data) {//---Itération pour afficher les données de l'API---//
 
       console.log(product);
-      //Création de la du code html pour afficher les produits---//
+      //Création du code html pour afficher les produits---//
       productList.innerHTML += `
 
         <article>
