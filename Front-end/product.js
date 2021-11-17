@@ -47,6 +47,7 @@ fetch(`http://localhost:3000/api/cameras/${id}`) //--Affichage du produit sélé
         localStorage.setItem(data._id, JSON.stringify(product));
         //--- Au click envoit sur le menu le nombres d'article--//
         document.querySelector('.cart span').textContent = localStorage.length;
+
         alert("Ajouté au panier");
       })
     }

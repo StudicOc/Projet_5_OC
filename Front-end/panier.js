@@ -24,10 +24,10 @@ if (localStorage.length > 0) {
                 products.push(key);
                 cartTablebody.innerHTML += `
 
-<tr>
-<td>${product.title}</td>
-<td>${product.price}€</td>
-</tr> 
+        <tr>
+            <td>${product.title}</td>
+            <td>${product.price}€</td>
+        </tr> 
 
 `;
                 //---Calcule du total---//
@@ -43,8 +43,6 @@ if (localStorage.length > 0) {
         console.log(Total);
         sessionStorage.setItem('Total', JSON.stringify(Total));
 
-
-
     }
     calculatePrice();
 }
@@ -55,19 +53,23 @@ if (localStorage.length > 0) {
 
 else {
     positionElement.innerHTML = `
-<div class="container padddingEmptycard">
-<div class=" text-center">
-<h4 class="h5 fw-bold py-3">Votre panier est vide</h4>
-<div class="border-p">
-<p>Remplissez-le avec notre gamme</p>
-</div>
-<div class=" my-5">
-<a href="/Front-end/index.html" class="borderCard text-white">
-<span>Continuez mes achats</span>
-</a>
-</div>
-</div>
-</div>
+
+
+
+    <div class="container padddingEmptycard">
+
+        <div class=" text-center">
+            <h4 class="h5 fw-bold py-3">Votre panier est vide</h4>
+            <div class="border-p">
+                <p>Remplissez-le avec notre gamme</p>
+            </div>
+            <div class=" my-5">
+                <a href="/Front-end/index.html" class="borderCard text-white">
+                    <span>Continuez mes achats</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
 `;
 }
