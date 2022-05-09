@@ -31,3 +31,7 @@ par le serveur.
 
 Planification de tests unitaires devra être réalisé afin de couvrir au minimum 80 % de la base de
 code pour le front-end.
+
+# Server
+
+- Vous pouvez ensuite exécuter le serveur avec node server.
